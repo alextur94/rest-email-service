@@ -34,7 +34,7 @@ docker-compose up
 
 4. Открываем удобную систему управления базами данных и подключаемся к БД
 ```bash
-host: localhsot
+host: localhost
 port: 5432
 login: admin
 password: root
