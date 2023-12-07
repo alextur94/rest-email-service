@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+  app:
+    container_name: lab
+    image: alextur94/lab:v1.0
+    build: ./
+    ports:
+      - "15555:15555"
+    depends_on:
+      - db_lab
+    volumes:
+      - ./logs:/logs
+  db_lab:
+    container_name: db_lab
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=lab
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=root
+    image: postgres:15.4
+
+

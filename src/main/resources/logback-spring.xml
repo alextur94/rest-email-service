@@ -1,0 +1,78 @@
+<configuration>
+
+    <root level="INFO">
+        <appender-ref ref="console" />
+        <appender-ref ref="allLogsFile" />
+    </root>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="allLogsFile" class="ch.qos.logback.core.FileAppender">
+        <file>logs/all-logs.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/all-logs.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>20MB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.turkovaleksey.emailservice.repositories" level="DEBUG">
+        <appender-ref ref="repositoryFile" />
+    </logger>
+
+    <appender name="repositoryFile" class="ch.qos.logback.core.FileAppender">
+        <file>logs/repository-logs.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/repository-logs.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>2MB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.turkovaleksey.emailservice.services" level="DEBUG">
+        <appender-ref ref="serviceFile" />
+    </logger>
+
+    <appender name="serviceFile" class="ch.qos.logback.core.FileAppender">
+        <file>logs/service-logs.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/service-logs.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>2MB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.turkovaleksey.emailservice.controllers" level="DEBUG">
+        <appender-ref ref="controllerFile" />
+    </logger>
+
+    <appender name="controllerFile" class="ch.qos.logback.core.FileAppender">
+        <file>logs/controller-logs.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/controller-logs.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>2MB</maxFileSize>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.turkovaleksey.emailservice.configs" level="DEBUG">
+        <appender-ref ref="configurationFile" />
+    </logger>
+
+</configuration>

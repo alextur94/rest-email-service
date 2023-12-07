@@ -1,0 +1,24 @@
+server:
+  port: 15555
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+#    Docker inside
+    url: jdbc:postgresql://db_lab:5432/lab
+    username: admin
+    password: root
+#    Docker outside
+#    url: jdbc:postgresql://localhost:5432/lab
+#    username: admin
+#    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+    show-sql: true
+  flyway:
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+springdoc:
+  override-with-generic-response: false
