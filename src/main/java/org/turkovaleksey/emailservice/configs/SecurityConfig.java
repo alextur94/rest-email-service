@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/api/email/download").authenticated()
                 .requestMatchers("/api/email/download-period").authenticated()
-                .requestMatchers("/api/email/save").permitAll()
+                .anyRequest().permitAll()
                 .and()
                 .httpBasic();
         return httpSecurity.build();
