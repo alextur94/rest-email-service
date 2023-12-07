@@ -33,11 +33,13 @@ docker-compose up
 ```
 
 4. Открываем удобную систему управления базами данных и подключаемся к БД
+```bash
 host: localhsot
 port: 5432
 login: admin
 password: root
 database: lab
+```
 
 5. Запускаем в базе данных скрипт из папки sql/data.sql
 Этот скрипт создаст таблицу emails и данные с которыми можно работать.
