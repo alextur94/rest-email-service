@@ -19,7 +19,7 @@
 
 1. Клонируем проект с github
 ```bash
-git clone https://github.com/cnet94/lab-email.git
+git clone https://github.com/alextur94/rest-email-service
 ```
 
 2. Переходим в папку проекта 
