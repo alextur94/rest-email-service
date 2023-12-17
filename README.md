@@ -24,7 +24,7 @@ git clone https://github.com/alextur94/rest-email-service
 
 2. Переходим в папку проекта 
 ```bash
-cd lab-email
+cd rest-email-service
 ```
 
 3. Запускаем скачивание докер образов на локальный репозиторий
